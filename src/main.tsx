@@ -7,19 +7,21 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
 import ProfileManagementPage from './pages/ProfileManagementPage';
+import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
-  <Provider store={store}>
-    <Router>
-      <Routes>
-        <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/" element={<Navigate to="/signup" />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/profile" element={<ProfileManagementPage />} /> {/* Direct access to profile */}
-      </Routes>
-    </Router>
-  </Provider>
+  <App/>
+  // <Provider store={store}>
+  //   <Router>
+  //     <Routes>
+  //       <Route path="/signup" element={<SignUpPage />} />
+  //       <Route path="/login" element={<LoginPage />} />
+  //       <Route path="/" element={<Navigate to="/signup" />} />
+  //       <Route path="/home" element={<HomePage />} />
+  //       <Route path="/profile" element={<ProfileManagementPage />} /> {/* Direct access to profile */}
+  //     </Routes>
+  //   </Router>
+  // </Provider>
 );

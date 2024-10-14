@@ -86,6 +86,7 @@ const LoginPage: React.FC = () => {
       
       // Redirect to Profile Management Page after successful login
       navigate('/profile'); // Adjust the path based on your routing setup
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       setError(err.response?.data?.message || 'Login failed. Please try again.');
     } finally {

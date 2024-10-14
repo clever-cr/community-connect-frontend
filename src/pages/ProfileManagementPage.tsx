@@ -89,13 +89,14 @@ const ProfileManagementPage: React.FC = () => {
     const fetchProfileData = async () => {
       try {
         const response = await axios.get('http://localhost:3000/communityconnect/user/profile');
-        const { businessName, services, availability, pricing, profilePictureUrl } = response.data;
+        const { businessName, services, availability, pricing } = response.data;
         
         setBusinessName(businessName);
         setServices(services);
         setAvailability(availability);
         setPricing(pricing);
         // Optionally, set a profile picture URL to display if needed
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (err: any) {
         setError(err.response?.data?.message || 'Failed to fetch profile data.');
       } finally {
@@ -142,6 +143,7 @@ const ProfileManagementPage: React.FC = () => {
       setPricing('');
       setProfilePicture(null);
       setError(null);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       setError(err.response?.data?.message || 'Profile update failed. Please try again.');
     }

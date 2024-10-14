@@ -8,14 +8,15 @@ import ProfileManagementPage from './pages/ProfileManagementPage';
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/profile" element={<ProfileManagementPage />} />
-      </Routes>
-    </Router>
+    <SignUpPage/>
+    // <Router>
+    //   <Routes>
+    //     <Route path="/" element={<HomePage />} />
+    //     <Route path="/login" element={<LoginPage />} />
+    //     <Route path="/signup" element={<SignUpPage />} />
+    //     <Route path="/profile" element={<ProfileManagementPage />} />
+    //   </Routes>
+    // </Router>
   );
 };
 
