@@ -1,23 +1,19 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import React, { useEffect, useState } from "react";
 import ServicesCard from "../../components/cards/ServicesCard";
-import { Modal } from "antd";
+import { Modal} from "antd";
 import CreateServicesForm from "../../components/forms/CreateServicesForm";
 import { useDispatch, useSelector } from "react-redux";
 import { getServices } from "../../services/businessServices/action";
-// interface Location {
-//   label: string;
-//   value: string;
-// }
+
 
 const ServicesOverview = () => {
   const [serviceType, setServiceType] = useState<string>("");
   const [location, setLocation] = useState<string>("");
+  const [bookData,setBookData] = useState<object>()
   const dispatch = useDispatch();
-  const { service } = useSelector((state: any) => state);
+  const { service ,authentication} = useSelector((state: any) => state);
   const allServices = service?.all?.service;
-  console.log("all servicess", allServices);
+  console.log("all servicess", allServices,'and',authentication);
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     getServices(
@@ -30,7 +26,8 @@ const ServicesOverview = () => {
     )(dispatch);
   }, []);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const showModal = () => {
+  const showModal = (data:any) => {
+    setBookData(data)
     setIsModalOpen(true);
   };
   const handleOk = () => {
@@ -56,7 +53,7 @@ const options=allServices?.map((el:any)=>{
         footer={null}
       >
         <div>
-          <CreateServicesForm />
+          <CreateServicesForm data={bookData} closeModal={handleOk}/>
         </div>
       </Modal>
       <div className="flex items-center justify-center mt-10">
@@ -114,11 +111,11 @@ const options=allServices?.map((el:any)=>{
         </form>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5 mt-5 ml-20">
-
+ 
         {allServices?.map((el: any) => {
           return (
             <ServicesCard
-              onClick={showModal}
+              onClick={()=>showModal(el)}
               title={el?.name}
               decription={el?.description}
               slot={el?.availableSlots?.map((el: any) => {

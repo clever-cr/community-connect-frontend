@@ -1,15 +1,10 @@
-import React from "react";
+
 import { PiCrosshairSimpleThin, PiHairDryer } from "react-icons/pi";
 type cardType = {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     title?: any;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     decription?: any;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     slot?: any;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onClick?:any;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     price?:any
   };
 const ServicesCard = ({decription,title,slot,onClick,price}:cardType) => {
@@ -26,7 +21,6 @@ const ServicesCard = ({decription,title,slot,onClick,price}:cardType) => {
       <div className="bg-white p-5 rounded-md h-[12rem] overflow-y-auto" style={styles.shadow}>
         <div className="flex justify-between">
           <div className="w-[42px] h-[42px] rounded-full border border-[#0302299a] flex justify-center items-center content-center">
-            {/* <img src="" alt="" className="w-full h-full rounded-full" />  */}
             <PiHairDryer color="#605BFF" size={30}/>
           </div>
           <div>
@@ -36,7 +30,6 @@ const ServicesCard = ({decription,title,slot,onClick,price}:cardType) => {
             <p className="text-[#03022980] text-sm font-normal">owner</p>
           </div>
           <div className="w-[32px] h-[32px] rounded-full  bg-[#03022928] flex justify-center items-center content-center">
-            {/* <img src="" alt="" className="w-full h-full rounded-full" /> */}
             <PiCrosshairSimpleThin color=""/>
           </div>
         </div>

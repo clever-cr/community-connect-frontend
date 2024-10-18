@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { notification } from "antd";
 import { authenticationActions } from ".";
 import { signUp,login } from "./service";
 
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
+
 export const register = (data:any) => async(dispatch:any)=>{
   try{
 dispatch(authenticationActions.setIsLoading(true))
@@ -23,6 +23,7 @@ try{
   const response = await login(data)
   console.log("response",response)
   if(response.status === 200){
+    dispatch(authenticationActions.setUser(response))
     dispatch(authenticationActions.setIsLoading(false))
     notification.success({message:"login successfully"})
   }else if(!response){

@@ -9,9 +9,7 @@ import { Link,useNavigate  } from 'react-router-dom';
 const SignUpPage = () => {
 const navigate = useNavigate()
   const dispatch = useDispatch();
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [formDatas] = useState<any>();
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleSubmit = async (event: any) => {
     event?.preventDefault();
     const formData = new FormData(event?.target);

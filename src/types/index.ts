@@ -6,8 +6,6 @@ export interface inputProps{
   name: string;
   type?: string;
   className?: string;
-  // onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onChange?: any
 }
 export interface buttonProps {
@@ -15,7 +13,6 @@ export interface buttonProps {
   className?: string;
   textClass?: string;
   icon?: ReactNode;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onClick?: any;
   type?: "button" | "submit" | "reset";
 }

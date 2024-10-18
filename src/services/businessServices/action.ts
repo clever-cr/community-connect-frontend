@@ -1,7 +1,7 @@
 import { servicesActions } from '.';
 import { createService, getAllServices } from './service';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 export const createServices = (data: any) => async (dispatch: any) => {
   try {
     dispatch(servicesActions.setIsLoading(true));
@@ -13,7 +13,7 @@ export const createServices = (data: any) => async (dispatch: any) => {
     console.log('error', error);
   }
 };
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 export const getServices = (query: string) => async (dispatch: any) => {
   try {
     dispatch(servicesActions.setIsLoading(true));

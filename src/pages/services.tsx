@@ -22,7 +22,7 @@ const services = [
   // Add more service data here
 ];
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 const ServiceCard = ({ name, type, location, availability, rating }: any) => {
   return (
     <div className="max-w-sm bg-white rounded-lg shadow-md p-6 m-4 hover:shadow-lg transition-shadow duration-300">

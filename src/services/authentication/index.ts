@@ -6,7 +6,8 @@ const authenticationSlice = createSlice ({
     isLoading:false,
     all:null,
     updated:null,
-    selected:null
+    selected:null,
+    user:null,
   },
   reducers:{
     setAll(state, action){
@@ -20,6 +21,9 @@ const authenticationSlice = createSlice ({
     },
     setIsLoading(state, action){
       state.isLoading = action.payload
+    },
+    setUser(state, action){
+      state.user = action.payload
     }
   }
 })

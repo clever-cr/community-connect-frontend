@@ -5,7 +5,6 @@ import Button from "../../ui/Button"
 
 const CreateService = () =>{
   const dispatch = useDispatch()
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleSubmit = async(event:any)=>{
     event.preventDefault()
     const formData = new FormData(event.target)

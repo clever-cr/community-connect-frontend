@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom"
 const Login = () =>{
 const navigate = useNavigate()
   const dispatch = useDispatch()
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleSubmit = async(event:any)=>{
     event.preventDefault()
     const formData = new FormData(event.target)
